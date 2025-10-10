@@ -125,7 +125,3 @@ central-de-compras-api/
 ├── server.js        # Entrada da aplicação
 └── swagger.json     # Documentação OpenAPI
 ```
-
-## �📄 Licença
-
-ISC - [Saiba mais](LICENSE)
