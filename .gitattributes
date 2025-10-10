@@ -1,9 +1,10 @@
-* text=auto eol=lf
+* linguist-vendored
+*.js linguist-vendored=false
+*.js linguist-generated=false
 *.js linguist-detectable=true
-*.js linguist-language=Node.js
-*.json linguist-detectable=true
-routes/* linguist-language=Node.js
-server.js linguist-language=Node.js
-*.md linguist-documentation=true
-package-lock.json linguist-generated=true
-db/* linguist-generated=true
+*.js linguist-language=Node
+*.json linguist-detectable=false
+routes/* linguist-vendored=false
+server.js linguist-vendored=false
+db/* linguist-documentation
+*.md linguist-documentation
