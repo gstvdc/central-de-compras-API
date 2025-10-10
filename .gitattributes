@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.js linguist-language=JavaScript
+*.json linguist-language=JSON
+routes/* linguist-language=Node.js
+server.js linguist-language=Node.js
+*.md linguist-documentation
+package.json linguist-language=JSON
+package-lock.json linguist-generated
