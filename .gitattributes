@@ -1,15 +1,13 @@
 # Definição geral
 * text=auto
 
-# Arquivos Node.js
+# Destacar API/OpenAPI
+swagger.json linguist-detectable=true
+swagger.json linguist-language=OpenAPI Specification
 *.js linguist-language=JavaScript
-server.js linguist-language=JavaScript
-routes/*.js linguist-language=JavaScript
-utils/*.js linguist-language=JavaScript
 
 # Ignorar na estatística de linguagens
-*.json linguist-documentation
-swagger.json linguist-documentation
+*.json !swagger.json linguist-documentation
 db/* linguist-documentation
 *.md linguist-documentation
 
