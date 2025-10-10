@@ -1,8 +1,9 @@
 * text=auto eol=lf
-*.js linguist-language=JavaScript
-*.json linguist-language=JSON
+*.js linguist-detectable=true
+*.js linguist-language=Node.js
+*.json linguist-detectable=true
 routes/* linguist-language=Node.js
 server.js linguist-language=Node.js
-*.md linguist-documentation
-package.json linguist-language=JSON
-package-lock.json linguist-generated
+*.md linguist-documentation=true
+package-lock.json linguist-generated=true
+db/* linguist-generated=true
