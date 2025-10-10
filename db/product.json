@@ -1,0 +1,44 @@
+[
+  {
+    "id": "7a6cc1282c5f6ec0235acd2bfa780145aa2a67fd",
+    "name": "Teclado e mouse",
+    "description": "Kit teclado e mouse sem fio",
+    "price": 200,
+    "stock_quantity": 8,
+    "supplier_id": "7a6cc1282c5f6ec0235acd2bfa780145aa2a67fd",
+    "status": "on"
+  },
+  {
+    "id": "9d34a15d-4fde-4fec-aeb7-49ce1da25104",
+    "name": "Produto Teste",
+    "supplier_id": "33e30306-c97e-4238-9fe0-a29f3d78c427",
+    "description": "Descrição do produto teste",
+    "stock_quantity": 100,
+    "price": 123.45,
+    "status": "on"
+  },
+  {
+    "id": "486d031b-8347-4a26-bf7f-29d0537f0a46",
+    "price": 123.45,
+    "name": "Produto Teste",
+    "supplier_id": "ae4f9bbd-f1ac-4060-8f55-d17d285c5eb5",
+    "stock_quantity": 0,
+    "status": "on"
+  },
+  {
+    "id": "c6ff7c5f-3628-446e-a544-bbdb962d1784",
+    "price": 123.45,
+    "name": "Produto Teste",
+    "supplier_id": "0878573b-7594-421e-a8bf-856f98898bc0",
+    "stock_quantity": 0,
+    "status": "on"
+  },
+  {
+    "id": "452da4b0-63ee-40fa-b22d-ff7830a52c77",
+    "price": 123.45,
+    "name": "Produto Teste",
+    "supplier_id": "2a15114b-0cf9-41a6-8e12-b5232350c08e",
+    "stock_quantity": 0,
+    "status": "on"
+  }
+]

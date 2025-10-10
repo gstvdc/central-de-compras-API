@@ -1,0 +1,32 @@
+[
+  {
+    "id": "fbe76fc0-98ea-4643-80d1-878bc6911eeb",
+    "status": "Pending",
+    "total_amount": 123.45,
+    "items": [
+      {
+        "campaign_id": "413bfa94-cec4-4e7c-abd1-05fda9427aa7",
+        "quantity": 1,
+        "product_id": "452da4b0-63ee-40fa-b22d-ff7830a52c77",
+        "unit_price": 123.45
+      }
+    ],
+    "store_id": "48d19633-d168-43da-b405-578e117088de",
+    "date": "2025-10-03T17:20:24.207Z"
+  },
+  {
+    "id": "4c20b772-6201-42c2-a8ac-f52c939a512b",
+    "store_id": "string",
+    "items": [
+      {
+        "product_id": "string",
+        "quantity": 0,
+        "campaign_id": "string",
+        "unit_price": 0
+      }
+    ],
+    "total_amount": 0,
+    "status": "Pending",
+    "date": "2025-10-03T22:38:33.953Z"
+  }
+]

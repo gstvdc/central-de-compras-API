@@ -1,0 +1,201 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Central de Compras - API",
+    "version": "1.0.0",
+    "description": "Spec em PT-BR descrevendo rotas principais para testes via Swagger UI."
+  },
+  "servers": [{ "url": "http://localhost:3000" }],
+  "tags": [
+    { "name": "Products", "description": "Desenvolvido por ***Eduardo da Silva Assis***" },
+    { "name": "Store", "description": "Desenvolvido por ***Henrique Matiola***" },
+    { "name": "Campaigns", "description": "Desenvolvido por ***João Marcos Vieira dos Santos***" },
+    { "name": "Orders", "description": "Desenvolvido por ***Gustavo da Cunha Constante***" },
+    { "name": "Suppliers", "description": "Desenvolvido por ***Bruno Luque R Silva***" },
+    { "name": "Users", "description": "Desenvolvido por ***Brayan Miguel Favarin***" }
+  ],
+  "paths": {
+    "/suppliers": {
+      "get": {
+        "tags": ["Suppliers"],
+        "summary": "Listar fornecedores",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "q",
+            "schema": { "type": "string" },
+            "description": "Filtro opcional pelo nome do fornecedor"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de fornecedores",
+            "content": {
+              "application/json": {
+                "schema": { "type": "array", "items": { "$ref": "#/components/schemas/Supplier" } }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Suppliers"],
+        "summary": "Criar fornecedor",
+        "requestBody": {
+          "required": true,
+          "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SupplierCreate" } } }
+        },
+        "responses": {
+          "201": {
+            "description": "Fornecedor criado",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Supplier" } } }
+          }
+        }
+      }
+    },
+    "/suppliers/{id}": {
+      "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }],
+      "get": {
+        "tags": ["Suppliers"],
+        "summary": "Obter fornecedor",
+        "responses": { "200": { "description": "Fornecedor" }, "404": { "description": "Não encontrado" } }
+      },
+      "put": {
+        "tags": ["Suppliers"],
+        "summary": "Atualizar fornecedor",
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SupplierUpdate" } } } },
+        "responses": { "200": { "description": "Atualizado" }, "404": { "description": "Não encontrado" } }
+      },
+      "delete": {
+        "tags": ["Suppliers"],
+        "summary": "Apagar fornecedor",
+        "responses": { "204": { "description": "Apagado" }, "404": { "description": "Não encontrado" } }
+      }
+    },
+
+    "/products": {
+      "get": {
+        "tags": ["Products"],
+        "summary": "Listar produtos",
+        "parameters": [
+          { "in": "query", "name": "q", "schema": { "type": "string" }, "description": "Filtro opcional pelo nome do produto" },
+          { "in": "query", "name": "supplier_id", "schema": { "type": "string" }, "description": "Filtrar produtos por fornecedor" }
+        ],
+        "responses": { "200": { "description": "Lista de produtos" } }
+      },
+      "post": {
+        "tags": ["Products"],
+        "summary": "Criar produto",
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ProductCreate" } } } },
+        "responses": { "201": { "description": "Criado" } }
+      }
+    },
+    "/products/{id}": {
+      "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }],
+      "get": { "tags": ["Products"], "summary": "Obter produto", "responses": { "200": { "description": "Produto" }, "404": { "description": "Não encontrado" } } },
+      "put": { "tags": ["Products"], "summary": "Atualizar produto", "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ProductUpdate" } } } }, "responses": { "200": { "description": "Atualizado" } } },
+      "delete": { "tags": ["Products"], "summary": "Apagar produto", "responses": { "204": { "description": "Apagado" } } }
+    },
+
+    "/orders": {
+      "get": {
+        "tags": ["Orders"],
+        "summary": "Listar pedidos",
+        "parameters": [
+          { "in": "query", "name": "date", "schema": { "type": "string", "format": "date" }, "description": "Filtrar pedidos por data" },
+          { "in": "query", "name": "store_id", "schema": { "type": "string" }, "description": "Filtrar pedidos por loja" }
+        ],
+        "responses": { "200": { "description": "Lista de pedidos" } }
+      },
+      "post": {
+        "tags": ["Orders"],
+        "summary": "Criar pedido",
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/OrderCreate" } } } },
+        "responses": { "201": { "description": "Criado" } }
+      }
+    },
+    "/orders/{id}": {
+      "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }],
+      "get": { "tags": ["Orders"], "summary": "Obter pedido", "responses": { "200": { "description": "Pedido" }, "404": { "description": "Não encontrado" } } },
+      "put": { "tags": ["Orders"], "summary": "Atualizar pedido", "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/OrderUpdate" } } } }, "responses": { "200": { "description": "Atualizado" } } },
+      "delete": { "tags": ["Orders"], "summary": "Apagar pedido", "responses": { "204": { "description": "Apagado" } } }
+    },
+
+    "/users": {
+      "get": {
+        "tags": ["Users"],
+        "summary": "Listar usuários",
+        "parameters": [
+          { "in": "query", "name": "q", "schema": { "type": "string" }, "description": "Filtro opcional pelo nome do usuário" }
+        ],
+        "responses": { "200": { "description": "Lista de usuários" } }
+      },
+      "post": { "tags": ["Users"], "summary": "Criar usuário", "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/UserCreate" } } } }, "responses": { "201": { "description": "Criado" } } }
+    },
+    "/users/{id}": {
+      "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }],
+      "get": { "tags": ["Users"], "summary": "Obter usuário", "responses": { "200": { "description": "Usuário" }, "404": { "description": "Não encontrado" } } },
+      "put": { "tags": ["Users"], "summary": "Atualizar usuário", "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/UserUpdate" } } } }, "responses": { "200": { "description": "Atualizado" } } },
+      "delete": { "tags": ["Users"], "summary": "Apagar usuário", "responses": { "204": { "description": "Apagado" } } }
+    },
+
+    "/store": {
+      "get": {
+        "tags": ["Store"],
+        "summary": "Listar lojas",
+        "parameters": [
+          { "in": "query", "name": "q", "schema": { "type": "string" }, "description": "Filtro opcional pelo nome da loja" }
+        ],
+        "responses": { "200": { "description": "Lista de lojas" } }
+      },
+      "post": { "tags": ["Store"], "summary": "Criar loja", "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/StoreCreate" } } } }, "responses": { "201": { "description": "Criado" } } }
+    },
+    "/store/{id}": {
+      "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }],
+      "get": { "tags": ["Store"], "summary": "Obter loja", "responses": { "200": { "description": "Loja" }, "404": { "description": "Não encontrado" } } },
+      "put": { "tags": ["Store"], "summary": "Atualizar loja", "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/StoreUpdate" } } } }, "responses": { "200": { "description": "Atualizado" } } },
+      "delete": { "tags": ["Store"], "summary": "Apagar loja", "responses": { "204": { "description": "Apagado" } } }
+    },
+
+    "/campaigns": {
+      "get": {
+        "tags": ["Campaigns"],
+        "summary": "Listar campanhas",
+        "parameters": [
+          { "in": "query", "name": "q", "schema": { "type": "string" }, "description": "Filtro opcional pelo nome da campanha" }
+        ],
+        "responses": { "200": { "description": "Lista de campanhas" } }
+      },
+      "post": { "tags": ["Campaigns"], "summary": "Criar campanha", "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/CampaignCreate" } } } }, "responses": { "201": { "description": "Criada" } } }
+    },
+    "/campaigns/{id}": {
+      "parameters": [{ "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }],
+      "get": { "tags": ["Campaigns"], "summary": "Obter campanha", "responses": { "200": { "description": "Campanha" }, "404": { "description": "Não encontrada" } } },
+      "put": { "tags": ["Campaigns"], "summary": "Atualizar campanha", "requestBody": { "required": true, "content": { "application/json": { "schema": { "$ref": "#/components/schemas/CampaignUpdate" } } } }, "responses": { "200": { "description": "Atualizada" } } },
+      "delete": { "tags": ["Campaigns"], "summary": "Apagar campanha", "responses": { "204": { "description": "Apagada" } } }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Supplier": { "type": "object", "properties": { "id": { "type": "string" }, "supplier_name": { "type": "string" }, "supplier_category": { "type": "string" }, "contact_email": { "type": "string" }, "phone_number": { "type": "string" }, "status": { "type": "string", "enum": ["on", "off"] } } },
+      "SupplierCreate": { "type": "object", "required": ["supplier_name","contact_email"], "properties": { "supplier_name": { "type": "string" }, "supplier_category": { "type": "string" }, "contact_email": { "type": "string" }, "phone_number": { "type": "string" }, "status": { "type": "string", "enum": ["on", "off"], "default": "on" } } },
+      "SupplierUpdate": { "type": "object", "properties": { "supplier_name": { "type": "string" }, "supplier_category": { "type": "string" }, "contact_email": { "type": "string" }, "phone_number": { "type": "string" }, "status": { "type": "string", "enum": ["on", "off"] } } },
+
+      "ProductCreate": { "type": "object", "required": ["name","price","supplier_id"], "properties": { "name": { "type": "string" }, "description": { "type": "string" }, "price": { "type": "number" }, "stock_quantity": { "type": "number", "default": 0 }, "supplier_id": { "type": "string" }, "status": { "type": "string", "enum": ["on", "off"], "default": "on" } } },
+      "ProductUpdate": { "type": "object", "properties": { "name": { "type": "string" }, "description": { "type": "string" }, "price": { "type": "number" }, "stock_quantity": { "type": "number" }, "supplier_id": { "type": "string" }, "status": { "type": "string", "enum": ["on", "off"] } } },
+
+      "OrderItemCreate": { "type": "object", "required": ["product_id", "quantity"], "properties": { "product_id": { "type": "string" }, "quantity": { "type": "number" }, "campaign_id": { "type": "string", "nullable": true }, "unit_price": { "type": "number" } } },
+      "OrderCreate": { "type": "object", "required": ["store_id","items","total_amount"], "properties": { "store_id": { "type": "string" }, "items": { "type": "array", "items": { "$ref": "#/components/schemas/OrderItemCreate" } }, "total_amount": { "type": "number" }, "status": { "type": "string", "enum": ["Pending", "Shipped", "Delivered"], "default": "Pending" }, "date": { "type": "string", "format": "date-time" } } },
+      "OrderUpdate": { "type": "object", "properties": { "store_id": { "type": "string" }, "items": { "type": "array", "items": { "$ref": "#/components/schemas/OrderItemCreate" } }, "total_amount": { "type": "number" }, "status": { "type": "string", "enum": ["Pending", "Shipped", "Delivered"] }, "date": { "type": "string", "format": "date-time" } } },
+
+      "UserCreate": { "type": "object", "required": ["user","pwd","contact_email"], "properties": { "name": { "type": "string" }, "contact_email": { "type": "string", "format": "email" }, "user": { "type": "string", "minLength": 3 }, "pwd": { "type": "string", "minLength": 6 }, "level": { "type": "string" }, "status": { "type": "string", "enum": ["on", "off"], "default": "on" } } },
+      "UserUpdate": { "type": "object", "properties": { "name": { "type": "string" }, "contact_email": { "type": "string", "format": "email" }, "user": { "type": "string", "minLength": 3 }, "pwd": { "type": "string", "minLength": 6 }, "level": { "type": "string" }, "status": { "type": "string", "enum": ["on", "off"] } } },
+
+      "StoreCreate": { "type": "object", "required": ["store_name"], "properties": { "store_name": { "type": "string" }, "cnpj": { "type": "string" }, "address": { "type": "string" }, "phone_number": { "type": "string" }, "contact_email": { "type": "string", "format": "email" }, "status": { "type": "string", "enum": ["on", "off"], "default": "on" } } },
+      "StoreUpdate": { "type": "object", "properties": { "store_name": { "type": "string" }, "cnpj": { "type": "string" }, "address": { "type": "string" }, "phone_number": { "type": "string" }, "contact_email": { "type": "string", "format": "email" }, "status": { "type": "string", "enum": ["on", "off"] } } },
+
+      "CampaignCreate": { "type": "object", "required": ["supplier_id","name","discount_percentage"], "properties": { "supplier_id": { "type": "string" }, "name": { "type": "string" }, "start_date": { "type": "string", "format": "date-time" }, "end_date": { "type": "string", "format": "date-time" }, "discount_percentage": { "type": "number", "minimum": 0, "maximum": 100 } } },
+      "CampaignUpdate": { "type": "object", "properties": { "supplier_id": { "type": "string" }, "name": { "type": "string" }, "start_date": { "type": "string", "format": "date-time" }, "end_date": { "type": "string", "format": "date-time" }, "discount_percentage": { "type": "number", "minimum": 0, "maximum": 100 } } }
+    }
+  }
+}

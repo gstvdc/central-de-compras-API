@@ -1,0 +1,50 @@
+[
+  {
+    "id": "7a6cc1282c5f6ec0235acd2bfa780145aa2a67fd",
+    "supplier_id": "d54af500-b355-4acd-8795-b62ed1b3fb45",
+    "name": "Black Friday",
+    "start_date": "2025-11-20T00:00:00.000Z",
+    "end_date": "2025-11-30T23:59:59.000Z",
+    "discount_percentage": 20
+  },
+  {
+    "id": "5dc79bb3-f5b5-45a2-af4a-a914bedf9391",
+    "supplier_id": "7a6cc1282c5f6ec0235acd2bfa780145aa2a67fd",
+    "name": "Campanha Teste",
+    "discount_percentage": 10,
+    "end_date": "2025-11-02T14:04:39.084Z",
+    "start_date": "2025-10-03T14:04:39.084Z"
+  },
+  {
+    "id": "f474cff6-9312-4c99-9220-d0acf77bf2b8",
+    "supplier_id": "8b7dd2393d6g7fd1346bde3cgb891256bb3b78ge",
+    "name": "Campanha Teste",
+    "discount_percentage": 10,
+    "end_date": "2025-11-02T14:08:51.382Z",
+    "start_date": "2025-10-03T14:08:51.382Z"
+  },
+  {
+    "id": "bbdb1579-e935-4e57-bb32-db314e314932",
+    "name": "Campanha Teste",
+    "discount_percentage": 10,
+    "supplier_id": "ae4f9bbd-f1ac-4060-8f55-d17d285c5eb5",
+    "start_date": "2025-10-03T00:00:00.000Z",
+    "end_date": "2025-12-31T23:59:59.999Z"
+  },
+  {
+    "id": "69d5726f-cc69-4458-b829-c48b56623df6",
+    "name": "Campanha Teste",
+    "discount_percentage": 10,
+    "supplier_id": "0878573b-7594-421e-a8bf-856f98898bc0",
+    "start_date": "2025-10-03T00:00:00.000Z",
+    "end_date": "2025-12-31T23:59:59.999Z"
+  },
+  {
+    "id": "413bfa94-cec4-4e7c-abd1-05fda9427aa7",
+    "name": "Campanha Teste",
+    "discount_percentage": 10,
+    "supplier_id": "2a15114b-0cf9-41a6-8e12-b5232350c08e",
+    "start_date": "2025-10-03T00:00:00.000Z",
+    "end_date": "2025-12-31T23:59:59.999Z"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "7a6cc1282c5f6ec0235acd2bfa780145aa2a67fd",
+    "supplier_name": "Judite Heeler",
+    "supplier_category": "Informatica, Segurança",
+    "contact_email": "j.heeler@gmail.com",
+    "phone_number": "48 9696 5858",
+    "status": "on"
+  },
+  {
+    "id": "8b7dd2393d6g7fd1346bde3cgb891256bb3b78ge",
+    "supplier_name": "Patricia Torres",
+    "supplier_category": "Papelaria",
+    "contact_email": "p.torres@outlook.com",
+    "phone_number": "48 9797 6969",
+    "status": "on"
+  }
+]

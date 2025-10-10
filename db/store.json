@@ -1,0 +1,56 @@
+[
+  {
+    "id": "7a6cc1282c5f6ec0235acd2bfa780145aa2a67fd",
+    "store_name": "Bingo Heeler",
+    "cnpj": "12.123.123.1234-12",
+    "address": "Bandit Hemmer, 42",
+    "phone_number": "48 9696 5858",
+    "contact_email": "down@bingo.com",
+    "status": "on"
+  },
+  {
+    "id": "fea0d647-6775-4c58-b7dd-f4eac21394a3",
+    "store_name": "Loja Teste",
+    "cnpj": "",
+    "address": "Rua Teste, 123",
+    "phone_number": "(11) 98888-8888",
+    "contact_email": "",
+    "status": "on"
+  },
+  {
+    "id": "0a062ffa-3c7f-493b-a9cc-cb6ce923066b",
+    "store_name": "Loja Teste",
+    "cnpj": "12.345.678/0001-90",
+    "address": "Rua Teste, 123",
+    "phone_number": "(11) 98888-8888",
+    "contact_email": "loja@teste.com",
+    "status": "on"
+  },
+  {
+    "id": "e3a825a8-0144-4d80-b974-68f8e36388e2",
+    "store_name": "Loja Teste",
+    "cnpj": "",
+    "address": "",
+    "phone_number": "",
+    "contact_email": "",
+    "status": "on"
+  },
+  {
+    "id": "7eb2ff32-a99e-4c0b-8a64-66753021094d",
+    "store_name": "Loja Teste",
+    "cnpj": "",
+    "address": "",
+    "phone_number": "",
+    "contact_email": "",
+    "status": "on"
+  },
+  {
+    "id": "48d19633-d168-43da-b405-578e117088de",
+    "store_name": "Loja Teste",
+    "cnpj": "",
+    "address": "",
+    "phone_number": "",
+    "contact_email": "",
+    "status": "on"
+  }
+]
