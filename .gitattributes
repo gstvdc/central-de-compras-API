@@ -1,10 +1,17 @@
-* linguist-vendored
-*.js linguist-vendored=false
-*.js linguist-generated=false
-*.js linguist-detectable=true
-*.js linguist-language=Node
-*.json linguist-detectable=false
-routes/* linguist-vendored=false
-server.js linguist-vendored=false
+# Definição geral
+* text=auto
+
+# Arquivos Node.js
+*.js linguist-language=JavaScript
+server.js linguist-language=JavaScript
+routes/*.js linguist-language=JavaScript
+utils/*.js linguist-language=JavaScript
+
+# Ignorar na estatística de linguagens
+*.json linguist-documentation
+swagger.json linguist-documentation
 db/* linguist-documentation
 *.md linguist-documentation
+
+# Arquivos gerados
+package-lock.json linguist-generated
