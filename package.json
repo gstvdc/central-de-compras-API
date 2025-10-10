@@ -9,7 +9,7 @@
     "dev": "node server.js"
   },
   "keywords": [],
-  "author": "Equipe DAII 2025.02",
+  "author": "Gustavo da Cunha Constante",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

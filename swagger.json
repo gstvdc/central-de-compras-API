@@ -7,12 +7,12 @@
   },
   "servers": [{ "url": "http://localhost:3000" }],
   "tags": [
-    { "name": "Products", "description": "Desenvolvido por ***Eduardo da Silva Assis***" },
-    { "name": "Store", "description": "Desenvolvido por ***Henrique Matiola***" },
-    { "name": "Campaigns", "description": "Desenvolvido por ***João Marcos Vieira dos Santos***" },
+    { "name": "Products", "description": "Desenvolvido por ***Gustavo da Cunha Constante***" },
+    { "name": "Store", "description": "Desenvolvido por ***Gustavo da Cunha Constante***" },
+    { "name": "Campaigns", "description": "Desenvolvido por ***Gustavo da Cunha Constante***" },
     { "name": "Orders", "description": "Desenvolvido por ***Gustavo da Cunha Constante***" },
-    { "name": "Suppliers", "description": "Desenvolvido por ***Bruno Luque R Silva***" },
-    { "name": "Users", "description": "Desenvolvido por ***Brayan Miguel Favarin***" }
+    { "name": "Suppliers", "description": "Desenvolvido por ***Gustavo da Cunha Constante***" },
+    { "name": "Users", "description": "Desenvolvido por ***Gustavo da Cunha Constante***" }
   ],
   "paths": {
     "/suppliers": {
